@@ -27,7 +27,7 @@ import java.util.Random;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CustomReceveir extends ParsePushBroadcastReceiver {
+public class CustomReceiver extends ParsePushBroadcastReceiver {
     private Integer lastNotificationId = null;
 
     @Override

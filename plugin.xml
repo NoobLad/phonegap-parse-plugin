@@ -23,7 +23,7 @@
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
           <service android:name="com.parse.PushService" />
-          <receiver android:name="com.parse.ParseBroadcastReceiver">
+          <receiver android:name="org.apache.cordova.core.CustomReceiver">
             <intent-filter>
               <action android:name="android.intent.action.BOOT_COMPLETED" />
               <action android:name="android.intent.action.USER_PRESENT" />
