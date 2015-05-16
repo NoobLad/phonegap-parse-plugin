@@ -28,7 +28,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CustomReceiver extends ParsePushBroadcastReceiver {
-    private Integer lastNotificationId = null;
+    private static Integer lastNotificationId = Integer.valueOf(System.currentTimeMillis());
 
     @Override
     protected void onPushReceive(Context context, Intent intent) {
@@ -63,9 +63,6 @@ public class CustomReceiver extends ParsePushBroadcastReceiver {
     protected void showNotification(Context context, Notification notification) {
         if(context != null && notification != null) {
             NotificationManager nm = (NotificationManager)context.getSystemService("notification");
-            if (lastNotificationId == null ) {
-                lastNotificationId = Integer.valueOf(System.currentTimeMillis());
-            }
 
             try {
                 nm.notify(lastNotificationId.intValue(), notification);
